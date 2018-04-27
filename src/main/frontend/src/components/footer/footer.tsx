@@ -5,7 +5,7 @@ interface ITitleProp {
 export default class Footer extends React.Component<ITitleProp, {}> {
     render() {
         return (
-            <div><footer> Copyright Thomson Reuters {this.props.year} </footer></div>
+            <div><footer className="footer"> Copyright Thomson Reuters {this.props.year} </footer></div>
         );
     }
 }

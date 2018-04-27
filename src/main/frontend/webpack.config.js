@@ -58,8 +58,6 @@ module.exports = {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-        new HtmlWebpackPlugin({
-            template: "./src/index.html"// not working
-        })
+
     ],
 };

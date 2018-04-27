@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../top/header';
-import Footer from '../base/footer';
-import OrderBook from '../body/orderBook';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 export class Layout extends React.Component<{}, {}> {
     render() {
         const year = 2018;
         return (
-            <div><Header/><OrderBook/><Footer year={year}/></div>
+            <div><Header/><Footer year={year}/></div>
         );
     }
 }
