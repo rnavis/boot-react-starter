@@ -30,7 +30,8 @@
     "ts-loader": "^3.3.1",
     "typescript": "^2.5.3",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.0.18",
