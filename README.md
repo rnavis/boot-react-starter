@@ -1,1 +1,3 @@
-# boot-react-starter
+# Read Me
+    -gradle wrapper
+    -gradle build
