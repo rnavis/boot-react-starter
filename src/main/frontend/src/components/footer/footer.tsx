@@ -1,11 +1,8 @@
 import React from 'react'
-interface ITitleProp {
-    year: number;
-}
-export default class Footer extends React.Component<ITitleProp, {}> {
+export default class Footer extends React.Component<{}, {}> {
     render() {
         return (
-            <div><footer className="footer"> Copyright Thomson Reuters {this.props.year} </footer></div>
+            <div><footer className="footer"> Copyright Thomson Reuters 2018 </footer></div>
         );
     }
 }

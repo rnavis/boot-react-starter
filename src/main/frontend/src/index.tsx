@@ -3,8 +3,20 @@ import $ from "jquery";
 const jQuery = require('jquery');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory  } from "react-router";
 import { Layout } from './components/layout/layout';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { OrderEntry } from './components/body/pages/orderEntry';
+import { MarketData } from './components/body/pages/marketData';
+import { Executions } from './components/body/pages/executions';
+import 'bootswatch/dist/cerulean/bootstrap.min.css';
 
 const orderbook = document.getElementById('orderbook');
-render(<Layout/>, orderbook);
+console.log('dfs fsfs');
+render(
+    <Router history={browserHistory }>
+        <Route path="/" component={Layout}>
+            <IndexRoute component={OrderEntry}></IndexRoute>
+            <Route path="marketData" component={MarketData}></Route>
+            <Route path="executions" component={Executions}></Route>
+        </Route>
+    </Router>, orderbook);

@@ -1,11 +1,16 @@
 import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-export class Layout extends React.Component<{}, {}> {
+
+export class Layout extends React.Component<any, {}> {
     render() {
-        const year = 2018;
+
         return (
-            <div><Header/><Footer year={year}/></div>
+            <div className="container-fluid">
+                <Header location={this.props.location}/>
+                <div className="d-lg-table-row">{this.props.children}</div>
+                <Footer/>
+            </div>
         );
-    }
-}
+    };
+};
