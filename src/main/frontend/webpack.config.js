@@ -8,7 +8,7 @@ module.exports = {
     devtool: debug ? "inline-sourcemap" : false,
     entry: "./index.tsx",
     resolve: {
-        extensions: [".js", ".jsx", ".tsx"]
+        extensions: [".js", ".jsx", ".tsx", '.ts']
     },
     module: {
         loaders: [
@@ -51,7 +51,7 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + "../../../../src/main/resources/static",
+        path: __dirname + "../../../../out/production/resources/static",
         filename: "index.min.js"
     },
     plugins: debug ? [] : [

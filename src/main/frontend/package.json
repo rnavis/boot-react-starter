@@ -1,7 +1,7 @@
 {
-  "name": "react-stater-pack",
+  "name": "boot-react-starter",
   "version": "1.0.0",
-  "description": "react starter pack",
+  "description": "boot react starter",
   "main": "webpack.config.js",
   "dependencies": {
     "awesome-typescript-loader": "^3.4.1",
@@ -24,7 +24,11 @@
     "postcss-loader": "^2.1.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.5",
     "react-router": "^3.0.5",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.0",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "ts-loader": "^3.3.1",
@@ -37,12 +41,15 @@
     "@types/react": "^16.0.18",
     "@types/react-dom": "^16.0.1",
     "@types/react-router": "^3.0.11",
+    "@types/react-redux": "^4.4.44",
+    "@types/react-router-redux": "^4.0.51",
+    "@types/redux-thunk": "^2.1.0",
     "@types/jquery": "^3.3.1",
     "source-map-loader": "^0.2.3",
     "webpack-cli": "^2.0.15"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --watch",
     "start": "webpack-dev-server --hot --inline ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

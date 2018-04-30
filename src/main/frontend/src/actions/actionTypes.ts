@@ -1,0 +1,6 @@
+export enum ActionTypes {
+    REFRESH_ORDERS_REQUEST,
+    REFRESH_ORDERS_DONE,
+    GET_APP_STATUS,
+    APP_STATUS_RECEIVED
+}

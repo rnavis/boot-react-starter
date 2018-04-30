@@ -1,22 +1,26 @@
 import $ from "jquery";
 
 const jQuery = require('jquery');
-import React, { Component } from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory, browserHistory  } from "react-router";
-import { Layout } from './components/layout/layout';
-import { OrderEntry } from './components/body/pages/orderEntry';
-import { MarketData } from './components/body/pages/marketData';
-import { Executions } from './components/body/pages/executions';
+//import { Router, Route, IndexRoute, hashHistory, browserHistory  } from "react-router";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { appStore } from './store';
+import { Provider } from 'react-redux';
+import { OrderBookContainer } from './components/body/orderBookContainer';
+import { HeaderContainer } from './components/header/headerContainer';
 import 'bootswatch/dist/cerulean/bootstrap.min.css';
 
 const orderbook = document.getElementById('orderbook');
-console.log('dfs fsfs');
+console.log(new Date());
 render(
-    <Router history={hashHistory }>
-        <Route path="/" component={Layout}>
-            <IndexRoute component={OrderEntry}></IndexRoute>
-            <Route path="marketData" component={MarketData}></Route>
-            <Route path="executions" component={Executions}></Route>
-        </Route>
-    </Router>, orderbook);
+    <Provider store={appStore}>
+        <div>
+            {/*<HeaderContainer/>*/}
+            <OrderBookContainer/>
+        </div>
+    </Provider>, orderbook);
+
+
+
+
