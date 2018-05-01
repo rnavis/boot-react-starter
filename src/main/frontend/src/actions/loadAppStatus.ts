@@ -9,7 +9,7 @@ declare var fetch;
 export interface AppStatusAction extends Action {
     appStatus: AppStatus;
 }
-export const createEmptyStatus = () => ({status:"NotConnected", marketStatus: "NotConnected"});
+export const createEmptyStatus = () => ({status:AppConstants.NOT_CONNECTED, marketStatus: AppConstants.NOT_CONNECTED});
 
 const createAppStatusRequestAction: () => AppStatusAction =
     () => ({

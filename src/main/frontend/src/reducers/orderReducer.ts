@@ -4,21 +4,13 @@ import {Order} from "../model/order";
 
 const emptyOrderList = (): Order[] => ([]);
 
-export const OrderReducer = (state=emptyOrderList(), action) => {
+export const OrderReducer = (orders=[], action) => {
     switch (action.type) {
         case ActionTypes.REFRESH_ORDERS_REQUEST:
-            return {
-                ...state,
-                orders: action.orders,
-            };
+            return orders;
         case ActionTypes.REFRESH_ORDERS_DONE:
-            var t= {
-                ...state,
-                orders: action.orders,
-            };
-            return t;
+            return action.orders;
         default:
-            return state;
+            return orders;
     }
-
 };

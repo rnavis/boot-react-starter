@@ -1,6 +1,7 @@
 import React from 'react';
 import { IndexLink, Link } from "react-router";
 import Footer from '../footer/footer';
+import { FrontContainer } from '../front/frontContainer';
 import { AppConstants } from '../../constants/appConstants';
 
 export const Layout: React.StatelessComponent<{}> = (props) => {
@@ -23,6 +24,7 @@ export const Layout: React.StatelessComponent<{}> = (props) => {
                                     <Link className="nav-link" to="marketData">Other</Link>
                                 </li>
                             </ul>
+                            <FrontContainer/>
                         </div>
                     </nav>
                 </header>

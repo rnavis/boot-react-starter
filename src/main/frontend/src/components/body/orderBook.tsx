@@ -1,5 +1,8 @@
 import React from 'react';
 import { Order } from '../../model/order'
+import { OrderBookHeader } from './orderBookHeader';
+import { OrderBookEntry } from './orderBookEntry';
+
 interface  OrderBookProps {
     loadOrders(): any;
     orders: Order[];
@@ -11,20 +14,12 @@ export class OrderBook extends React.Component<OrderBookProps, undefined> {
             <div>
                 <table className="table table-hover">
                     <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Symbol</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                    </tr>
+                    <OrderBookHeader/>
                     </thead>
                     <tbody>
-                    {this.props.orders.map(order => <tr className="table-active" key={order.id}>
-                        <td>{order.id}</td>
-                        <td>{order.symbol}</td>
-                        <td>{order.price}</td>
-                        <td>{order.quantity}</td>
-                    </tr>)}
+                    {this.props.orders.map(order =>
+                        <OrderBookEntry key={order.id} order={order}/>
+                    )}
                     </tbody>
                 </table>;
             </div>

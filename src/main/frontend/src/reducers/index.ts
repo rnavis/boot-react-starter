@@ -12,6 +12,6 @@ export interface AppState {
 }
 
 export const masterState = combineReducers<AppState>({
-    corders: OrderReducer,
-    appStatus: StatusReducer,
+    orders: OrderReducer,
+    appStatus: StatusReducer
 });
