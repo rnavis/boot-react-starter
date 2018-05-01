@@ -1,7 +1,7 @@
 import React from 'react';
 import { Order } from '../../model/order'
 interface  OrderBookProps {
-    loadOrders: () => any;
+    loadOrders(): any;
     orders: Order[];
 }
 export class OrderBook extends React.Component<OrderBookProps, undefined> {

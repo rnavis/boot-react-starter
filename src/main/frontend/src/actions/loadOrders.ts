@@ -1,8 +1,7 @@
 import { Dispatch, Action } from "redux";
 import { ActionTypes } from './actionTypes';
 import { Order } from '../model/order';
-import { AppState } from '../app-state';
-import {AppConstants} from "../constants/appStatus";
+import { AppConstants } from "../constants/appConstants";
 
 declare var fetch;
 
@@ -23,7 +22,7 @@ const createLoadOrdersDoneAction: (orders: Order[]) => OrderAction =
 
 export const loadOrders = () => {
 
-    return (dispatch: Dispatch<AppState>) => {
+    return (dispatch: Dispatch<Order[]>) => {
 
         dispatch(createLoadOrdersRequestAction());
 

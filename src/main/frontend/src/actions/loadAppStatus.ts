@@ -1,29 +1,31 @@
 import { Dispatch, Action } from "redux";
 import { ActionTypes } from './actionTypes';
-import { AppStatus, AppConstants } from '../constants/appStatus';
-import {AppState} from "../app-state";
+import { AppStatus } from '../model/appStatus';
+import { AppConstants } from "../constants/appConstants";
+import {Order} from "../model/order";
 
 declare var fetch;
 
 export interface AppStatusAction extends Action {
     appStatus: AppStatus;
 }
+export const createEmptyStatus = () => ({status:"NotConnected", marketStatus: "NotConnected"});
+
 const createAppStatusRequestAction: () => AppStatusAction =
     () => ({
         type: ActionTypes.GET_APP_STATUS,
-        appStatus: {} as AppStatus,
+        appStatus: createEmptyStatus() as AppStatus,
     });
-const createAppStatusRetrievedAction: (appStatus: AppStatus) => AppStatusAction =
-    (appStatus: AppStatus) => ({
+const createAppStatusRetrievedAction= (appStatus: AppStatus) => ({
         type: ActionTypes.APP_STATUS_RECEIVED,
         appStatus,
     });
 
 export const loadAppStatus = () => {
-    return (dispatch:Dispatch<AppState>) => {
+    return (dispatch:Dispatch<AppStatus>) => {
         dispatch(createAppStatusRequestAction());
         return fetch(AppConstants.APP_SERVER+'/status')
             .then((res) => res.json())
-            .then((appStatus: AppStatus) => dispatch(createAppStatusRetrievedAction(appStatus)));
+            .then((data) => dispatch(createAppStatusRetrievedAction(data)));
     }
 };

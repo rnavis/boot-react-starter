@@ -1,9 +1,17 @@
 import { combineReducers } from 'redux';
-import { AppState } from '../app-state';
-import { HeaderReducer } from "./headerReducer";
-import { OrderReducer } from "./orderReducer";
+import { OrderReducer } from "../reducers/orderReducer";
+import { StatusReducer } from "./statusReducer";
+import { Order } from "../model/order";
+import { AppStatus } from "../model/appStatus";
 
-export default combineReducers<AppState>({
-    HeaderReducer,
-    OrderReducer
+
+export interface AppState {
+    orders:Order[];
+    order: Order;
+    appStatus: AppStatus
+}
+
+export const masterState = combineReducers<AppState>({
+    corders: OrderReducer,
+    appStatus: StatusReducer,
 });

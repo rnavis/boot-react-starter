@@ -23,8 +23,11 @@ public class OmsController {
     }
 
     @RequestMapping(value="/status")
-    public String getStatus() {
-        return "Connected";
+    public AppStatus getStatus() {
+        AppStatus status = new AppStatus();
+        status.setStatus("Connected");
+        status.setMarketStatus("NotConnected");
+        return status;
     }
 
 }
