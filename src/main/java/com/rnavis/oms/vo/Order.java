@@ -1,10 +1,13 @@
-package com.rnavis.oms;
+package com.rnavis.oms.vo;
 
 public class Order {
     private long id;
     private String symbol;
     private long quantity;
     private long price;
+    private String side;
+    private boolean isValid;
+    private OrderValidation validation;
 
     public long getId() {
         return id;
@@ -36,5 +39,29 @@ public class Order {
 
     public void setPrice(long price) {
         this.price = price;
+    }
+
+    public String getSide() {
+        return side;
+    }
+
+    public void setSide(String side) {
+        this.side = side;
+    }
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setValid(boolean valid) {
+        isValid = valid;
+    }
+
+    public OrderValidation getValidation() {
+        return validation;
+    }
+
+    public void setValidation(OrderValidation validation) {
+        this.validation = validation;
     }
 }

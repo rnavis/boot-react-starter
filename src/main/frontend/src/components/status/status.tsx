@@ -1,8 +1,7 @@
 import React from 'react';
-import { AppConstants } from '../../constants/appConstants';
 import { AppStatus } from '../../model/appStatus';
 
-export class Front extends React.Component<IFrontProps, undefined> {
+export class Status extends React.Component<IProps, undefined> {
     render() {
         console.log('ssfdsssss');
         return (
@@ -19,7 +18,7 @@ export class Front extends React.Component<IFrontProps, undefined> {
         });
     }
 }
-interface IFrontProps {
+interface IProps {
     appStatus: AppStatus;
     loadAppStatus:() => any;
 }

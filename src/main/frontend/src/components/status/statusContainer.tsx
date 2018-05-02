@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import { AppState } from "../../reducers";
 import { loadAppStatus } from "../../actions/loadAppStatus";
-import { Front } from "./front";
+import { Status } from "./status";
 
 const mapStateToProps = (state: AppState) => ({
     appStatus: state.appStatus,
@@ -12,5 +12,5 @@ const mapStateToProps = (state: AppState) => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators({ loadAppStatus }, dispatch);
 
-export const FrontContainer =
-    connect(mapStateToProps, mapDispatchToProps)(Front);
+export const StatusContainer =
+    connect(mapStateToProps, mapDispatchToProps)(Status);

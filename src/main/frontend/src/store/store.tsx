@@ -12,7 +12,6 @@ const sivanLogger = (store) => (next) => (action) => {
 
 let initialState = {
     orders: [],
-    order: {},
     appStatus: {
         status: AppConstants.NOT_CONNECTED,
         marketStaus: AppConstants.NOT_CONNECTED

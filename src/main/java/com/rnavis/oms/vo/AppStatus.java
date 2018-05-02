@@ -1,4 +1,4 @@
-package com.rnavis.oms;
+package com.rnavis.oms.vo;
 
 public class AppStatus {
     private String status;

@@ -7,7 +7,6 @@ import { AppStatus } from "../model/appStatus";
 
 export interface AppState {
     orders:Order[];
-    order: Order;
     appStatus: AppStatus
 }
 

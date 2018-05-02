@@ -1,4 +1,5 @@
 import React from 'react';
+import { Table } from 'reactstrap';
 import { Order } from '../../model/order'
 import { OrderBookHeader } from './orderBookHeader';
 import { OrderBookEntry } from './orderBookEntry';
@@ -11,8 +12,8 @@ export class OrderBook extends React.Component<OrderBookProps, undefined> {
     render() {
         console.log('game... ' +this.props);
         return (
-            <div>
-                <table className="table table-hover">
+
+                <Table>
                     <thead>
                     <OrderBookHeader/>
                     </thead>
@@ -21,14 +22,14 @@ export class OrderBook extends React.Component<OrderBookProps, undefined> {
                         <OrderBookEntry key={order.id} order={order}/>
                     )}
                     </tbody>
-                </table>;
-            </div>
+                </Table>
+
         );
     }
 
     componentDidMount() {
-        this.props.loadOrders().then(orders => {
+        /*this.props.loadOrders().then(orders => {
             console.log(orders);
-        });
+        });*/
     }
 }
