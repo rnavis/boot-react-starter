@@ -17,8 +17,11 @@ export class Header extends React.Component<IHeaderProps, {}> {
                 <div className="collapse navbar-collapse" id="navbarColor03">
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Upload onUpload={this.props.onImportOrders} extensions={this.props.acceptedImportExtensions}/>
                         </NavItem>
+                        {/*<li className={"nav-item orderbook"}>
+                            <Link className="nav-link" to="/orders">Orders</Link>
+                        </li>*/}
+                        <li className={"nav-item orderbook"}><Upload onUpload={this.props.onImportOrders} extensions={this.props.acceptedImportExtensions}/></li>
                     </Nav>
                     <StatusContainer/>
                 </div>

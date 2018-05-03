@@ -1,7 +1,10 @@
 package com.rnavis.oms.service;
 
+import com.rnavis.oms.engine.rules.OrderRules;
+import com.rnavis.oms.engine.rules.Rules;
 import com.rnavis.oms.vo.Order;
 import com.rnavis.oms.vo.OrderValidation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,24 +12,26 @@ import java.util.List;
 import java.util.Random;
 
 @Service
-public class OrderService {
-
+public class OrderService implements IOrderService{
+    @Autowired
+    IMarketService marketService;
     public List<Order> getValidatedOrders(List<Order> orders) {
-        for (Order o: orders) {
-            o.setId(generateId());
-            o.setIsValid(true);
-            if (o.getSymbol().equalsIgnoreCase("GMO")) {
-                o.setIsValid(false);
-                o.setValidation(new OrderValidation(o.getId(), "My unknown symbol"));
+        for (Order order: orders) {
+            order.setId(generateId());
+            if (!marketService.isMarketOpen()) {
+                updateMarketAsClosed(order);
             } else {
-                o.setValidation(new OrderValidation(o.getId(), "Good to execute"));
+                OrderRules.runRules(order);
             }
         }
         return orders;
     }
 
+    private void updateMarketAsClosed(Order order) {
+        order.setValidation(new OrderValidation(order.getId(), "Market Closed"));
+    }
     private static int generateId() {
-        return generateId(1,1000);
+        return generateId(1,100000);
     }
 
     private static int generateId(int min, int max) {
@@ -37,4 +42,5 @@ public class OrderService {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
+
 }

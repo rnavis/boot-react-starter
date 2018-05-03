@@ -10,5 +10,5 @@ export class Order {
 
 export class OrderValidation {
     public id: number;
-    public message: string;
+    public messages: string;
 }

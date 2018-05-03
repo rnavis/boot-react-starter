@@ -14,7 +14,7 @@ export class OrderBookEntry extends React.Component<Props, undefined> {
                 <td>{this.props.order.price}</td>
                 <td>{this.props.order.quantity}</td>
                 <td>{this.props.order.side}</td>
-                <td><ValidityPopover icon={this.getIcon()} iconColor={this.getColor()} orderId={this.props.order.id} message = {this.props.order.validation.message} isValid={this.props.order.isValid} isPopupOpen={ false }/></td>
+                <td><ValidityPopover icon={this.getIcon()} iconColor={this.getColor()} orderId={this.props.order.id} messages= {this.props.order.validation.messages} isValid={this.props.order.isValid} isPopupOpen={ false }/></td>
             </tr>
         );
     }

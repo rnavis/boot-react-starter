@@ -3,18 +3,22 @@ package com.rnavis.oms.vo;
 public class OrderValidation {
 
     private long id;
-    private String message;
+    private String messages;
 
-    public OrderValidation(long id, String message) {
+    public OrderValidation(long id, String messages) {
         this.id = id;
-        this.message = message;
+        this.messages = messages;
     }
 
     public long getId() {
         return id;
     }
 
-    public String getMessage() {
-        return message;
+    public void setMessages(String messages) {
+        this.messages = messages;
+    }
+
+    public String getMessages() {
+        return messages;
     }
 }

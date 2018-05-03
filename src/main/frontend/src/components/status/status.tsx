@@ -7,7 +7,7 @@ export class Status extends React.Component<IProps, undefined> {
         return (
             <div className="text-right">
                 <span className="my-2 my-lg-0 badge badge-pill badge-warning">
-                    {this.props.appStatus.status}
+                    {this.props.appStatus.marketStatus}
                 </span>
             </div>
         );

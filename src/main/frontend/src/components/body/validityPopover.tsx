@@ -27,7 +27,7 @@ export class ValidityPopover extends React.Component<IValidityPopoverProps, IVal
                 </Button>*/}
                 <Popover placement="bottom" isOpen={this.state.popoverOpen} target={'vPop' + this.props.orderId} toggle={this.toggle}>
                     <PopoverHeader>Order Validator</PopoverHeader>
-                    <PopoverBody>{this.props.message}</PopoverBody>
+                    <PopoverBody>{this.props.messages}</PopoverBody>
                 </Popover>
             </div>
         );
@@ -36,7 +36,7 @@ export class ValidityPopover extends React.Component<IValidityPopoverProps, IVal
 
 interface IValidityPopoverProps {
     orderId: number
-    message: string
+    messages: string
     isValid: boolean
     isPopupOpen: boolean
     icon: string

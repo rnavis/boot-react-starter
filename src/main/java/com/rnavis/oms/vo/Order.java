@@ -4,7 +4,7 @@ public class Order {
     private long id;
     private String symbol;
     private long quantity;
-    private long price;
+    private double price;
     private String side;
     private boolean isValid;
     private OrderValidation validation;
@@ -33,11 +33,11 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
