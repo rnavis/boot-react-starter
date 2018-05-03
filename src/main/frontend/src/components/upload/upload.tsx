@@ -5,7 +5,7 @@ export class Upload extends React.Component<UploadProps, undefined> {
     render() {
         console.log('upload action');
         return (
-            <UploadButton id="order-upload" extensions={this.props.extensions} cssClass="btn btn-secondary" iconClass="none" onUpload={this.props.onUpload}/>
+            <UploadButton id="order-upload" extensions={this.props.extensions} cssClass="fa fa-upload" iconClass="fa fa-upload" onUpload={this.props.onUpload}/>
         );
     }
 }

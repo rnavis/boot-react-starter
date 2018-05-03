@@ -14,9 +14,9 @@ public class OrderService {
     public List<Order> getValidatedOrders(List<Order> orders) {
         for (Order o: orders) {
             o.setId(generateId());
-            o.setValid(true);
+            o.setIsValid(true);
             if (o.getSymbol().equalsIgnoreCase("GMO")) {
-                o.setValid(false);
+                o.setIsValid(false);
                 o.setValidation(new OrderValidation(o.getId(), "My unknown symbol"));
             } else {
                 o.setValidation(new OrderValidation(o.getId(), "Good to execute"));

@@ -37,8 +37,24 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
+            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream'},
             {
-                test: /\.(jpg|png|gif|svg)$/,
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            mimetype: 'application/font-woff'
+                        }
+                    }]
+            },
+            {
+                test: /\.eot(\?v=\d+.\d+.\d+)?$/,
+                use: ['file-loader']
+            },
+            {
+                test: /\.(jpg|png|gif|svg|ico})$/,
                 use: [
                     {
                         loader: "file-loader",

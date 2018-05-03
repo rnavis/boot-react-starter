@@ -1,0 +1,40 @@
+.filename-container {
+    margin: 20px 20px 0 0;
+}
+
+.filename {
+    display: inline-block;
+    padding: 0 10px;
+    margin-right: 10px;
+    background-color: #ccc;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'verdana', sans-serif;
+}
+
+.rounded {
+    height: 30px;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.in1 {
+    width: 120px;
+}
+
+.in2 {
+    width: 350px;
+}
+
+i {
+    margin: 0 8px;
+}
+
+.hide {
+    display: none;
+}

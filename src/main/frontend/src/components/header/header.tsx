@@ -19,9 +19,6 @@ export class Header extends React.Component<IHeaderProps, {}> {
                         <NavItem>
                             <Upload onUpload={this.props.onImportOrders} extensions={this.props.acceptedImportExtensions}/>
                         </NavItem>
-                        {/*<li className={"nav-item orderbook"}>
-                            <Link className="nav-link" to="/orders">Orders</Link>
-                        </li>*/}
                     </Nav>
                     <StatusContainer/>
                 </div>

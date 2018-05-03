@@ -7,7 +7,7 @@ import { HeaderContainer } from '../header/headerContainer'
 
 export const Layout: React.StatelessComponent<{}> = (props) => {
     var container = {
-        "min-height": "900px",
+        "minHeight": "900px",
         "overflow":"hidden"
     }
     return (

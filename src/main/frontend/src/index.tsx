@@ -10,6 +10,8 @@ import { OrderBookContainer } from './components/body/orderBookContainer';
 import { StatusContainer } from './components/status/statusContainer';
 //import 'bootswatch/dist/cerulean/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/oms.css';
+import 'font-awesome/css/font-awesome.min.css';
 import {Layout} from "./components/layout/layout";
 
 const orderbook = document.getElementById('orderbook');

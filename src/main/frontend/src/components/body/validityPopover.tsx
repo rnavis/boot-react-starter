@@ -20,10 +20,12 @@ export class ValidityPopover extends React.Component<IValidityPopoverProps, IVal
         console.log('validaiton '+ this.props);
         return (
             <div>
-                <Button id="vPop" onClick={this.toggle}>
-                    Launch Popover
-                </Button>
-                <Popover placement="bottom" isOpen={this.state.popoverOpen} target="vPop" toggle={this.toggle}>
+                <span role="button" id={'vPop' + this.props.orderId} style={{color: this.props.iconColor}} className={this.props.icon} onClick={this.toggle}/>
+                {/*
+               <Button id={'vPop' + this.props.orderId} onClick={this.toggle}>
+                    <i className="fa fa-check-circle"></i>
+                </Button>*/}
+                <Popover placement="bottom" isOpen={this.state.popoverOpen} target={'vPop' + this.props.orderId} toggle={this.toggle}>
                     <PopoverHeader>Order Validator</PopoverHeader>
                     <PopoverBody>{this.props.message}</PopoverBody>
                 </Popover>
@@ -31,11 +33,16 @@ export class ValidityPopover extends React.Component<IValidityPopoverProps, IVal
         );
     }
 }
+
 interface IValidityPopoverProps {
+    orderId: number
     message: string
     isValid: boolean
     isPopupOpen: boolean
+    icon: string
+    iconColor: string
 }
+
 interface  IValidityPopoverState {
     popoverOpen: boolean
 }
