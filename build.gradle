@@ -30,6 +30,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('javax.xml.bind:jaxb-api:2.3.0')
-	
+    compile 'com.google.code.gson:gson:2.8.4'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
